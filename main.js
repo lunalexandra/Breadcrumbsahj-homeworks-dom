@@ -1,7 +1,48 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 821:
+/***/ (() => {
+
+const body = document.querySelector("body");
+const container = document.createElement("div");
+container.classList.add("container");
+body.insertAdjacentElement("afterbegin", container);
+let i = 0;
+while (i < 16) {
+  const cell = document.createElement("div");
+  cell.classList.add("cell");
+  container.insertAdjacentElement("afterbegin", cell);
+  i++;
+}
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/publicPath */
@@ -11,7 +52,12 @@
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
 
+// EXTERNAL MODULE: ./src/js/cell.js
+var cell = __webpack_require__(821);
 ;// CONCATENATED MODULE: ./src/img/goblin.png
 const goblin_namespaceObject = __webpack_require__.p + "2dbd01ce16c0fa83cb67.png";
 ;// CONCATENATED MODULE: ./src/js/app.js
@@ -43,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 // TODO: write your code in app.js
+})();
+
 /******/ })()
 ;
